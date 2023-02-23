@@ -1,13 +1,18 @@
 # JAVASCRIPT : GUESS THE OUTPUT/APPROACH
 
-**Qx. Question**
+#### Qx. Question
 ```javascript
 x = 23;
 const x;
 ```
-**answer:**                
-`Syntax Error: Missing initializer in const declaration`    
-**Temporal Dead Zone: It is a behaviour that occurs with variables declared with _let_ and _const_ keywords. Below code throws same error.**
+<details><summary><b>Answer</b></summary>          
+<p>
+`Syntax Error: Missing initializer in const declaration`
+ <br/>  
+<b>Temporal Dead Zone: It is a behaviour that occurs with variables declared with _let_ and _const_ keywords. Below code throws same error.</b>
+
+</p>
+</details>
 
 ---------------
 **Qx. Question**
