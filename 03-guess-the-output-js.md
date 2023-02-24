@@ -1,4 +1,4 @@
-# JAVASCRIPT : GUESS THE OUTPUT/APPROACH
+# JAVASCRIPT : GUESS THE OUTPUT
 
 #### 1. Question
 ```javascript
