@@ -1,31 +1,39 @@
 # JAVASCRIPT : GUESS THE OUTPUT/APPROACH
 
-#### Qx. Question
+#### 1. Question
 ```javascript
 x = 23;
 const x;
 ```
-<details><summary><b>Answer</b></summary>          
+
+<details>
+<summary>Answer</summary>
 <p>
-`Syntax Error: Missing initializer in const declaration`
- <br/>  
-<b>Temporal Dead Zone: It is a behaviour that occurs with variables declared with _let_ and _const_ keywords. Below code throws same error.</b>
+
+`Syntax Error: Missing initializer in const declaration`     
+_Temporal Dead Zone:_ It is a behaviour that occurs with variables declared with _let_ and _const_ keywords. Below code throws same error.
 
 </p>
 </details>
 
 ---------------
-**Qx. Question**
+#### 2. Question
 ```javascript
 x = 23;
 let x;
 ```
-**answer:**                
-`ReferenceError: Cannot access 'x' before initialization`    
-**Temporal Dead Zone: It is a behaviour that occurs with variables declared with _let_ and _const_ keywords. Below code throws same error.**
+<details>
+<summary>Answer</summary>
+<p>
+
+`ReferenceError: Cannot access 'x' before initialization`     
+_Temporal Dead Zone:_ It is a behaviour that occurs with variables declared with _let_ and _const_ keywords. Below code throws same error.
+
+</p>
+</details>
 
 --------------
-**Qx. Question**
+#### 3. Question
 ```javascript
 let x;
 const y;
@@ -35,7 +43,11 @@ console.log(x);
 console.log(y);
 console.log(z);
 ```
-**answer:**                    
+
+<details>
+<summary>Answer</summary>
+<p>
+
 `undefined   // x`
 ```javascript
 const y;         
@@ -44,26 +56,37 @@ SyntaxError: Missing initializer in const declaration
 ```
 `undefined   // z`
 
+</p>
+</details>                   
+
+
 ---------------
 
-**Qx. Question**
+#### Qx. Question
 ```javascript
 console.log(1);
 setTimeout(function() {console.log(2)}, 1000);
 setTimeout(function() {console.log(3)}, 0);
 console.log(4);
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `1`   
 `4`   
 `3`   
 `2`                   
 Even though the second timeout function has a waiting time of zero seconds, the javascript engine always evaluates the setTimeout function using the Web API and therefore, **the complete function executes before the setTimeout function can execute**.
 
+</p>
+</details>  
+
+
 ---------------          
 
 
-**Qx. Question**
+#### Qx. Question
 ```javascript
 function x() {
     setTimeout(function() {
@@ -74,15 +97,22 @@ function x() {
 
 x();
 ```
-**answer:**    
+<details>
+<summary>Answer</summary>
+<p>
+
 `1`     
 Prints 1 after 1 second.
-It does not give error because hoisting takes place and variable declaration appears to be on the top of code.          
+It does not give error because hoisting takes place and variable declaration appears to be on the top of code.   
+
+</p>
+</details>      
+       
 
 ---------------          
 
 
-**Qx. Question**
+#### Qx. Question
 ```javascript
 function x() {
     setTimeout(function() {
@@ -93,15 +123,22 @@ function x() {
 
 x();
 ```
-**answer:** 
+<details>
+<summary>Answer</summary>
+<p>
+
 `1  // after 1 second`     
 Prints 1 after 1 second.
-Even though **let** variables are not hoisted, due to async nature of JS, the complete function code runs before the setTimeout function.               
+Even though **let** variables are not hoisted, due to async nature of JS, the complete function code runs before the setTimeout function.
+
+</p>
+</details>  
+               
 
 ---------------          
 
 
-**Qx. Question**
+#### Qx. Question
 ```javascript
 function x() {
     setTimeout(function() {
@@ -114,14 +151,21 @@ function x() {
 x();
 
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `ReferenceError: Cannot access 'i' before initialization`     
-**Temporal Dead Zone**         
+**Temporal Dead Zone**    
+
+</p>
+</details>  
+     
 
 ---------------          
 
 
-**Qx. Question**
+#### Qx. Question
 ```javascript
 (function(){
   setTimeout(()=> console.log(1),2000);
@@ -131,16 +175,24 @@ x();
 })();
 
 ```
-**answer:**  
+
+<details>
+<summary>Answer</summary>
+<p>
+
 `2`   
 `4`    
 `3`    
 `1`  // After two seconds     
 * Even though the second timeout function has a waiting time of zero seconds, the javascript engine always evaluates the setTimeout function using the Web API and therefore, **the complete function executes before the setTimeout function can execute**
 * The function does not have a function name and is not invoked because it is an **Immedidately Invoked Function.**
+
+</p>
+</details>   
+
 ---------------          
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 function func1() {
     setTimeout(() => {
@@ -153,14 +205,21 @@ function func1() {
 
 func1();
 ```
-**answer:**  
+
+<details>
+<summary>Answer</summary>
+<p>
+
 `12`     
 `20`     
 Even though **let** variables are not hoisted, due to async nature of JS, the complete function code runs before the setTimeout function. Therefore, it has access to both x and y.
 
+</p>
+</details>  
+ 
 ---------------           
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 function func2() {
     for(var i=0; i<3; i++) {
@@ -170,15 +229,23 @@ function func2() {
 
 func2();
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `3`    
 `3`   
 `3`   
 * Since variable declared with var keyword does not have block scope. 
 * Also, inside the for loop, the variable i is incremented first and then checked.
+
+</p>
+</details> 
+
+
 ---------------           
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 function func2() {
     for(let i=0; i<3; i++) {
@@ -188,17 +255,23 @@ function func2() {
 
 func2();
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 // after 2 seconds    
 `0`    
 `1`    
 `2`   
 * let keyword has block scope.
 
+</p>
+</details> 
+
 ---------------           
 
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 let x= {}, y = {name:"Ronny"},z = {name:"John"};
 
@@ -208,7 +281,10 @@ x[z] = {name:"Akki"};
 console.log(x[y]);
 
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `{ name: 'Akki' }`     
 * Adding objects as properties of another object should be done carefully.
 * Writing **x[y] = {name:”Vivek”}** , is same as writing **x[‘object Object’] = {name:”Vivek”}** ,
@@ -217,10 +293,15 @@ console.log(x[y]);
 
 * Both x[y] and x[z] are referencing the same property.
 
+
+</p>
+</details> 
+
+
 ---------------           
 
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 function runFunc(){
     console.log("1" + 1);
@@ -232,7 +313,10 @@ function runFunc(){
   
   runFunc();
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `11`  
 `NaN`          
 `2-22`            
@@ -242,25 +326,38 @@ function runFunc(){
 * Coercion takes place
 * **'+'** converts Number to String and outputs String
 * **'-'** converts String to Number and performs operation, outputs Number ( typeof(NaN) = Number )
+
+</p>
+</details> 
+
+
 ---------------           
 
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 let a = 0;
 let b = false;
 console.log((a == b));
 console.log((a === b));
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `true   // Equality Coercion`           
 `false`     
+
+
+</p>
+</details> 
+
 
 
 ---------------           
 
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 var x = 23;
 
@@ -273,7 +370,10 @@ var x = 23;
   })();
 })();
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `NaN`     
 
 **random() function has functional scope**, since x is declared and hoisted in the functional scope.
@@ -288,9 +388,14 @@ function random(){
 }
 ```
 
+</p>
+</details> 
+
+
+
 ---------------           
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 let hero = {
     powerLevel: 99,
@@ -307,7 +412,10 @@ let hero = {
   console.log(getPower());
   console.log(getPower.apply(hero2));
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `99`     
 `undefined`      
 `42`     
@@ -320,10 +428,15 @@ So, when the function is invoked, it is invoked referencing the global object:
 ```javascript
 window.getPower() = getPower();
 ```
+
+</p>
+</details> 
+
+
 ---------------           
 
 
-**Qx . Question**    
+#### Qx. Question    
 ```javascript
 const a = function(){
         console.log("a");
@@ -349,7 +462,10 @@ const a = function(){
   
   a();
 ```
-**answer:**           
+<details>
+<summary>Answer</summary>
+<p>
+
 `a`               
 `global/window object`                 
 `b`              
@@ -358,9 +474,14 @@ const a = function(){
 `global/window object`    
 
 * Since we are using **arrow function inside func2**, this keyword refers to the global object.
+
+</p>
+</details> 
+
+
 ---------------           
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
   const b = {
     name:"Vivek",
@@ -376,15 +497,23 @@ const a = function(){
   
   b.f();
 ```
-**answer:**             
+<details>
+<summary>Answer</summary>
+<p>
+
 `'Vivek'`              
 `undefined`                 
 `"Vivek`          
 Only in the **IIFE (Immediately Invoked Functions)** inside the function f , the this keyword refers to the global/window object.
 
+</p>
+</details> 
+
+
+
 ---------------           
 
-**Qx. Each time bigFunc is called, an array of size 700 is being created, Modify the code so that we don't create the same array again and again.**    
+#### Qx. Each time bigFunc is called, an array of size 700 is being created, Modify the code so that we don't create the same array again and again.      
 ```javascript
 function bigFunc(element){
   let newArray = new Array(700).fill('♥');
@@ -394,7 +523,10 @@ function bigFunc(element){
 console.log(bigFunc(599)); // Array is created
 console.log(bigFunc(670)); // Array is created again
 ```
-**answer:** 
+<details>
+<summary>Answer</summary>
+<p>
+
 code can be modified by using closures 
 ```javascript
 function bigFunc(){
@@ -407,9 +539,14 @@ getElement(599);
 getElement(670);
 ```
 
+</p>
+</details> 
+
+
+
 ---------------           
 
-**Qx. Question**    
+#### Qx. Question    
 ```javascript
 (function(a){
   return (function(){
@@ -418,13 +555,21 @@ getElement(670);
   })()
 })(45);
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 `45`      
 Even though a is defined in the outer function, due to closure the inner functions have access to it.
 
+
+</p>
+</details> 
+
+
 ---------------           
 
-**Qx. The following code outputs 2 and 2 after waiting for one second. Modify the code to output 0 and 1 after one second.**    
+#### Qx. The following code outputs 2 and 2 after waiting for one second. Modify the code to output 0 and 1 after one second.    
 ```javascript
 function randomFunc(){
   for(var i = 0; i < 2; i++){
@@ -434,7 +579,10 @@ function randomFunc(){
 
 randomFunc();
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 * **Using _let_ keyword :**
 ```javascript
 function randomFunc(){
@@ -459,625 +607,10 @@ function randomFunc(){
 randomFunc(); 
 ```
 
----------------           
+</p>
+</details> 
 
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------           
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
-
-**Qx. Question**    
-```javascript
-
-```
-**answer:**  
-
----------------
+--------------- 
 
  **Qx. We have to store the name of every item in an array. What will be your approach?**    
 ```javascript
@@ -1116,7 +649,1269 @@ randomFunc();
     }
 ]
 ```
-**answer:**  
+<details>
+<summary>Answer</summary>
+<p>
+
 * Deep Copy
 * Using Recursion
----------------   
+
+</p>
+</details> 
+
+
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------           
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+#### Qx. Question    
+```javascript
+
+```
+<details>
+<summary>Answer</summary>
+<p>
+
+
+
+</p>
+</details> 
+
+
+---------------
+
+  
