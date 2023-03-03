@@ -1,6 +1,10 @@
 # everything-javascript
 Documenting everything I learn about JavaScript
 
+### Good Resources
+
+- [Airbnb Style Guide](https://github.com/airbnb/javascript)
+
 #### Disclaimer: 
 - This is a repository for my learning and I do not own any material
 - Original source links are added 
